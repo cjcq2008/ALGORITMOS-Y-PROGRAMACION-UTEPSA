@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Vial Bolivia | Modo peatón</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/peaton.css">
+    <script src="js/peaton.js" defer></script>
+</head>
+<body data-modo="peaton">
+    <header class="encabezado">
+        <a class="marca enlace-marca" href="index.html">🚦 Aula Vial Bolivia</a>
+        <a class="enlace-inicio" href="index.html">← Inicio</a>
+    </header>
+
+    <main class="contenedor pagina-recorrido">
+        <section class="cabecera-recorrido cabecera-peaton">
+            <span class="icono-grande" aria-hidden="true">🚶</span>
+            <div>
+                <span class="sello">Recorrido educativo</span>
+                <h1>Modo peatón</h1>
+                <p>Lee cada regla, selecciona una respuesta y pulsa «Revisar respuesta» para conocer tu resultado.</p>
+            </div>
+        </section>
+
+        <div class="resumen-recorrido">
+            <strong>15 instrucciones</strong><span>·</span><span>Una regla por nivel</span><span>·</span><span>Practica a tu ritmo</span>
+        </div>
+
+        <section class="panel-puntuacion puntuacion-peaton" aria-label="Puntuación del modo peatón">
+            <div class="texto-puntuacion">
+                <span class="tipo-nivel">Tu progreso</span>
+                <h2>Puntuación del peatón</h2>
+                <p>Cada respuesta correcta suma un punto. Revisa las respuestas para actualizar tu puntuación.</p>
+            </div>
+            <div class="estadisticas-puntuacion">
+                <div><span>Puntos</span><strong id="puntajeTotal">0 / 15</strong></div>
+                <div><span>Revisadas</span><strong id="respuestasRevisadas">0 / 15</strong></div>
+                <div><span>Precisión</span><strong id="precisionRespuestas">—</strong></div>
+            </div>
+            <div class="progreso-puntuacion" aria-label="Progreso de revisión"><span id="barraProgreso"></span></div>
+            <p id="textoProgreso" class="texto-progreso">Todavía no revisaste ninguna respuesta.</p>
+            <button id="reiniciarPuntuacion" class="boton boton-reiniciar" type="button">Reiniciar puntuación</button>
+        </section>
+
+        <section class="lista-niveles" aria-label="Niveles para peatones">
+            <article class="nivel nivel-peaton" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">01</span>
+                    <div><span class="tipo-nivel">Instrucción 1</span><h2>Camina por un lugar seguro</h2></div>
+                </div>
+                <p class="regla">En las calles urbanas, utiliza la acera y evita caminar por donde circulan los vehículos.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton1">¿Por dónde deberías caminar?</label>
+                    <select id="peaton1" name="peaton1">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Por el centro de la calle</option>
+                    <option value="2">Por la acera</option>
+                    <option value="3">Entre los vehículos</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">02</span>
+                    <div><span class="tipo-nivel">Instrucción 2</span><h2>Usa el cruce peatonal</h2></div>
+                </div>
+                <p class="regla">Cuando exista un cruce peatonal, úsalo y comprueba que sea seguro cruzar.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton2">¿Dónde es preferible cruzar?</label>
+                    <select id="peaton2" name="peaton2">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">En cualquier parte</option>
+                    <option value="2">Entre autos estacionados</option>
+                    <option value="3">Por el paso peatonal</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">03</span>
+                    <div><span class="tipo-nivel">Instrucción 3</span><h2>Mira antes de cruzar</h2></div>
+                </div>
+                <p class="regla">Detente en un lugar seguro, observa a ambos lados y comprueba que los vehículos se hayan detenido o estén lejos.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton3">¿Qué debes hacer antes de cruzar?</label>
+                    <select id="peaton3" name="peaton3">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Correr sin mirar</option>
+                    <option value="2">Mirar a ambos lados y comprobar que sea seguro</option>
+                    <option value="3">Mirar solamente el celular</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">04</span>
+                    <div><span class="tipo-nivel">Instrucción 4</span><h2>Respeta el semáforo peatonal</h2></div>
+                </div>
+                <p class="regla">Cruza cuando la señal peatonal lo permita y verifica que puedas hacerlo con seguridad.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton4">¿Cuándo debes iniciar el cruce?</label>
+                    <select id="peaton4" name="peaton4">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Cuando los autos comiencen a avanzar</option>
+                    <option value="2">Cuando tenga prisa</option>
+                    <option value="3">Cuando la señal peatonal lo permita y sea seguro</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">05</span>
+                    <div><span class="tipo-nivel">Instrucción 5</span><h2>Evita distracciones</h2></div>
+                </div>
+                <p class="regla">Al acercarte a la calle, presta atención al tránsito y guarda el celular mientras cruzas.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton5">¿Qué conducta es más segura?</label>
+                    <select id="peaton5" name="peaton5">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Mirar el tránsito y dejar el celular</option>
+                    <option value="2">Escribir mensajes mientras cruzo</option>
+                    <option value="3">Usar audífonos a volumen alto sin prestar atención</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">06</span>
+                    <div><span class="tipo-nivel">Instrucción 6</span><h2>No salgas entre vehículos</h2></div>
+                </div>
+                <p class="regla">No cruces desde detrás de un vehículo estacionado ni salgas repentinamente a la calzada.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton6">¿Qué debes evitar?</label>
+                    <select id="peaton6" name="peaton6">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Usar un cruce peatonal</option>
+                    <option value="2">Salir de repente entre vehículos estacionados</option>
+                    <option value="3">Observar antes de cruzar</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">07</span>
+                    <div><span class="tipo-nivel">Instrucción 7</span><h2>Obedece las señales de seguridad</h2></div>
+                </div>
+                <p class="regla">Respeta las indicaciones de agentes de tránsito, barreras y señales de advertencia.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton7">¿Qué debes hacer si una barrera impide el paso?</label>
+                    <select id="peaton7" name="peaton7">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Pasar rápidamente por debajo</option>
+                    <option value="2">Ignorar la señal</option>
+                    <option value="3">Esperar y respetar la barrera</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">08</span>
+                    <div><span class="tipo-nivel">Instrucción 8</span><h2>Cruza por lugares visibles</h2></div>
+                </div>
+                <p class="regla">Elige un cruce autorizado y evita atravesar la calle desde lugares donde los conductores no puedan verte.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton8">¿Qué lugar debes elegir para cruzar?</label>
+                    <select id="peaton8" name="peaton8">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Un lugar autorizado y visible</option>
+                        <option value="2">Detrás de un vehículo grande</option>
+                        <option value="3">Entre autos en movimiento</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">09</span>
+                    <div><span class="tipo-nivel">Instrucción 9</span><h2>Espera en un lugar seguro</h2></div>
+                </div>
+                <p class="regla">Espera sobre la acera, lejos del borde de la calzada, mientras observas el tránsito.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton9">¿Dónde es más seguro esperar?</label>
+                    <select id="peaton9" name="peaton9">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">En medio de la calle</option>
+                        <option value="2">Sobre la acera y lejos del borde</option>
+                        <option value="3">Entre dos vehículos</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">10</span>
+                    <div><span class="tipo-nivel">Instrucción 10</span><h2>Camina con niños pequeños de la mano</h2></div>
+                </div>
+                <p class="regla">Acompaña a los niños pequeños y mantenlos lejos de la calzada.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton10">¿Cómo debe cruzar un niño pequeño acompañado?</label>
+                    <select id="peaton10" name="peaton10">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Corriendo por delante</option>
+                        <option value="2">Solo, sin avisar</option>
+                        <option value="3">De la mano de su acompañante</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">11</span>
+                    <div><span class="tipo-nivel">Instrucción 11</span><h2>Ten cuidado cerca de los buses</h2></div>
+                </div>
+                <p class="regla">No cruces por delante ni por detrás de un bus detenido si impide ver el tránsito.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton11">¿Qué debes hacer si un bus bloquea tu visión?</label>
+                    <select id="peaton11" name="peaton11">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Esperar hasta tener visibilidad y un cruce seguro</option>
+                        <option value="2">Cruzar rápidamente por delante</option>
+                        <option value="3">Pasar por detrás sin mirar</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">12</span>
+                    <div><span class="tipo-nivel">Instrucción 12</span><h2>Usa pasos habilitados</h2></div>
+                </div>
+                <p class="regla">Respeta puentes peatonales, pasos inferiores y otras instalaciones destinadas al cruce.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton12">Si hay un paso peatonal habilitado, ¿qué debes hacer?</label>
+                    <select id="peaton12" name="peaton12">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Cruzar por cualquier lugar</option>
+                        <option value="2">Utilizar el paso habilitado</option>
+                        <option value="3">Caminar por la calzada</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">13</span>
+                    <div><span class="tipo-nivel">Instrucción 13</span><h2>Hazte visible con poca luz</h2></div>
+                </div>
+                <p class="regla">En condiciones de poca iluminación, usa elementos visibles y presta especial atención al tránsito.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton13">¿Qué ayuda a que te vean de noche?</label>
+                    <select id="peaton13" name="peaton13">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Vestir todo oscuro y correr</option>
+                        <option value="2">Caminar mirando el celular</option>
+                        <option value="3">Usar elementos visibles y cruzar con cuidado</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">14</span>
+                    <div><span class="tipo-nivel">Instrucción 14</span><h2>Respeta las indicaciones de las autoridades</h2></div>
+                </div>
+                <p class="regla">Si un agente dirige el tránsito, atiende sus indicaciones y no te guíes solo por el semáforo.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton14">¿Qué debes hacer ante la indicación de un agente?</label>
+                    <select id="peaton14" name="peaton14">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Seguir su indicación de tránsito</option>
+                        <option value="2">Ignorarlo siempre</option>
+                        <option value="3">Cruzar sin observar</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-peaton" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">15</span>
+                    <div><span class="tipo-nivel">Instrucción 15</span><h2>No juegues en la calle</h2></div>
+                </div>
+                <p class="regla">Juega en lugares seguros, alejados de las calles y de los vehículos.</p>
+                <div class="respuesta-nivel">
+                    <label for="peaton15">¿Dónde debes jugar?</label>
+                    <select id="peaton15" name="peaton15">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">En la carretera</option>
+                        <option value="2">En un parque o zona segura</option>
+                        <option value="3">En medio de la calle</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+        </section>
+
+        <div class="navegacion-inferior">
+            <a class="boton boton-secundario" href="index.html">← Volver al inicio</a>
+            <a class="boton boton-principal" href="conductor.html">Ver modo conductor →</a>
+        </div>
+        <p class="nota">El puntaje de este recorrido es independiente del otro modo y se guarda en este navegador.</p>
+    </main>
+    <footer class="pie-pagina">Aula Vial Bolivia · Modo peatón</footer>
+</body>
+</html>

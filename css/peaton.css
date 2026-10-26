@@ -1,0 +1,22 @@
+/* Estilos exclusivos de peaton.html */
+body[data-modo="peaton"] .cabecera-peaton {
+    box-shadow: 0 8px 22px rgba(21, 156, 117, 0.08);
+}
+
+body[data-modo="peaton"] .nivel-peaton .numero-nivel {
+    background: #e3fff2;
+    color: #087653;
+}
+
+body[data-modo="peaton"] .nivel-peaton select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 4px rgba(21, 156, 117, 0.13);
+}
+
+body[data-modo="peaton"] .boton-revisar {
+    background: var(--verde);
+}
+
+body[data-modo="peaton"] .boton-revisar:hover {
+    background: var(--verde-oscuro);
+}

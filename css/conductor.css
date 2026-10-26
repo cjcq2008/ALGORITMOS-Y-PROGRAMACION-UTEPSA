@@ -1,0 +1,23 @@
+/* Estilos exclusivos de conductor.html */
+body[data-modo="conductor"] .cabecera-conductor {
+    box-shadow: 0 8px 22px rgba(184, 134, 11, 0.08);
+}
+
+body[data-modo="conductor"] .nivel-conductor .numero-nivel {
+    background: #fff5d6;
+    color: #876000;
+}
+
+body[data-modo="conductor"] .nivel-conductor select:focus {
+    border-color: #d6a20b;
+    box-shadow: 0 0 0 4px rgba(245, 200, 66, 0.2);
+}
+
+body[data-modo="conductor"] .boton-revisar {
+    background: #d9a300;
+    color: #302400;
+}
+
+body[data-modo="conductor"] .boton-revisar:hover {
+    background: #efbd28;
+}

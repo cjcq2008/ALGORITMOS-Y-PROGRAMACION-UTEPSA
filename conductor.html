@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Vial Bolivia | Modo conductor</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/conductor.css">
+    <script src="js/conductor.js" defer></script>
+</head>
+<body data-modo="conductor">
+    <header class="encabezado">
+        <a class="marca enlace-marca" href="index.html">🚦 Aula Vial Bolivia</a>
+        <a class="enlace-inicio" href="index.html">← Inicio</a>
+    </header>
+
+    <main class="contenedor pagina-recorrido">
+        <section class="cabecera-recorrido cabecera-conductor">
+            <span class="icono-grande" aria-hidden="true">🚗</span>
+            <div>
+                <span class="sello">Recorrido educativo</span>
+                <h1>Modo conductor</h1>
+                <p>Lee cada regla, selecciona una respuesta y pulsa «Revisar respuesta» para conocer tu resultado.</p>
+            </div>
+        </section>
+
+        <div class="resumen-recorrido">
+            <strong>16 instrucciones</strong><span>·</span><span>Una regla por nivel</span><span>·</span><span>Practica a tu ritmo</span>
+        </div>
+
+        <section class="panel-puntuacion puntuacion-conductor" aria-label="Puntuación del modo conductor">
+            <div class="texto-puntuacion">
+                <span class="tipo-nivel">Tu progreso</span>
+                <h2>Puntuación del conductor</h2>
+                <p>Cada respuesta correcta suma un punto. Revisa las respuestas para actualizar tu puntuación.</p>
+            </div>
+            <div class="estadisticas-puntuacion">
+                <div><span>Puntos</span><strong id="puntajeTotal">0 / 16</strong></div>
+                <div><span>Revisadas</span><strong id="respuestasRevisadas">0 / 16</strong></div>
+                <div><span>Precisión</span><strong id="precisionRespuestas">—</strong></div>
+            </div>
+            <div class="progreso-puntuacion" aria-label="Progreso de revisión"><span id="barraProgreso"></span></div>
+            <p id="textoProgreso" class="texto-progreso">Todavía no revisaste ninguna respuesta.</p>
+            <button id="reiniciarPuntuacion" class="boton boton-reiniciar" type="button">Reiniciar puntuación</button>
+        </section>
+
+        <section class="lista-niveles" aria-label="Niveles para conductores">
+            <article class="nivel nivel-conductor" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">01</span>
+                    <div><span class="tipo-nivel">Instrucción 1</span><h2>Reconoce las señales</h2></div>
+                </div>
+                <p class="regla">Observa las señales de tránsito y cumple las indicaciones que correspondan a cada una.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor1">¿Qué debes hacer ante una señal de PARE?</label>
+                    <select id="conductor1" name="conductor1">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Reducir un poco y seguir sin observar</option>
+                    <option value="2">Detener completamente el vehículo y continuar cuando sea seguro</option>
+                    <option value="3">Tocar la bocina y continuar</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">02</span>
+                    <div><span class="tipo-nivel">Instrucción 2</span><h2>Respeta el semáforo</h2></div>
+                </div>
+                <p class="regla">Obedece las luces del semáforo y observa que la intersección esté despejada antes de avanzar.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor2">¿Qué debes hacer ante la luz roja?</label>
+                    <select id="conductor2" name="conductor2">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Acelerar para pasar rápido</option>
+                    <option value="2">Avanzar si no ves otros vehículos</option>
+                    <option value="3">Detenerte antes de la línea de parada</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">03</span>
+                    <div><span class="tipo-nivel">Instrucción 3</span><h2>Controla la velocidad</h2></div>
+                </div>
+                <p class="regla">Respeta los límites señalizados y reduce la velocidad si el clima, la vía o el tránsito lo requieren.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor3">¿Qué debes hacer si llueve y la vía está resbaladiza?</label>
+                    <select id="conductor3" name="conductor3">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Mantener velocidad alta</option>
+                    <option value="2">Reducir la velocidad y aumentar la precaución</option>
+                    <option value="3">Frenar bruscamente sin necesidad</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">04</span>
+                    <div><span class="tipo-nivel">Instrucción 4</span><h2>Usa la protección adecuada</h2></div>
+                </div>
+                <p class="regla">Utiliza el cinturón de seguridad y, en motocicleta, el casco correspondiente. Asegura también a los pasajeros.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor4">¿Qué debes comprobar antes de iniciar el viaje?</label>
+                    <select id="conductor4" name="conductor4">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Que los ocupantes usen la protección correspondiente</option>
+                    <option value="2">Solamente que la radio funcione</option>
+                    <option value="3">Que todos puedan viajar sin cinturón</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">05</span>
+                    <div><span class="tipo-nivel">Instrucción 5</span><h2>Cuida al peatón</h2></div>
+                </div>
+                <p class="regla">Reduce la velocidad y respeta el paso peatonal. Mantente atento a personas que ya están cruzando.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor5">¿Qué haces si una persona cruza por el paso peatonal?</label>
+                    <select id="conductor5" name="conductor5">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Acelerar para pasar primero</option>
+                    <option value="2">Reducir o detenerte para permitir el cruce seguro</option>
+                    <option value="3">Tocar la bocina para que corra</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">06</span>
+                    <div><span class="tipo-nivel">Instrucción 6</span><h2>Mantén distancia</h2></div>
+                </div>
+                <p class="regla">Deja un espacio suficiente con el vehículo de adelante para reaccionar y frenar con seguridad.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor6">¿Por qué debes mantener distancia?</label>
+                    <select id="conductor6" name="conductor6">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Para impedir que otros vehículos pasen</option>
+                    <option value="2">Porque así puedes mirar el celular</option>
+                    <option value="3">Para tener tiempo de reaccionar y frenar</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">07</span>
+                    <div><span class="tipo-nivel">Instrucción 7</span><h2>Realiza maniobras seguras</h2></div>
+                </div>
+                <p class="regla">Señaliza con anticipación los giros y cambios de carril. Adelanta solo donde esté permitido y sea seguro.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor7">¿Qué debes hacer antes de cambiar de carril?</label>
+                    <select id="conductor7" name="conductor7">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Observar, señalizar y comprobar que sea seguro</option>
+                    <option value="2">Girar de inmediato sin avisar</option>
+                    <option value="3">Confiar en que los otros vehículos frenarán</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">08</span>
+                    <div><span class="tipo-nivel">Instrucción 8</span><h2>Conduce con atención</h2></div>
+                </div>
+                <p class="regla">No conduzcas bajo los efectos del alcohol ni uses el celular mientras conduces.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor8">¿Qué haces si necesitas atender el celular?</label>
+                    <select id="conductor8" name="conductor8">
+                    <option value="">Selecciona una respuesta</option>
+                    <option value="1">Leer el mensaje mientras avanzas</option>
+                    <option value="2">Detenerte en un lugar seguro antes de usarlo</option>
+                    <option value="3">Sostener el celular mientras giras</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">09</span>
+                    <div><span class="tipo-nivel">Instrucción 9</span><h2>Revisa antes de iniciar el viaje</h2></div>
+                </div>
+                <p class="regla">Antes de salir, comprueba frenos, luces, neumáticos y espejos.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor9">¿Qué conviene comprobar antes de conducir?</label>
+                    <select id="conductor9" name="conductor9">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Solo la música</option>
+                        <option value="2">Únicamente el color del vehículo</option>
+                        <option value="3">Frenos, luces, neumáticos y espejos</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">10</span>
+                    <div><span class="tipo-nivel">Instrucción 10</span><h2>Usa el cinturón de seguridad</h2></div>
+                </div>
+                <p class="regla">Colócate el cinturón y verifica que los ocupantes también lo utilicen.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor10">¿Qué debes hacer antes de arrancar?</label>
+                    <select id="conductor10" name="conductor10">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Colocarte el cinturón y comprobar que los ocupantes lo usen</option>
+                        <option value="2">Arrancar y abrocharlo después</option>
+                        <option value="3">Usarlo solo en carretera</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">11</span>
+                    <div><span class="tipo-nivel">Instrucción 11</span><h2>Respeta los límites de velocidad</h2></div>
+                </div>
+                <p class="regla">Adapta la velocidad a las señales, el tránsito, el clima y la visibilidad.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor11">¿Cómo eliges una velocidad segura?</label>
+                    <select id="conductor11" name="conductor11">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Conducir siempre al máximo</option>
+                        <option value="2">Respetar límites y condiciones del camino</option>
+                        <option value="3">Seguir al vehículo más rápido</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">12</span>
+                    <div><span class="tipo-nivel">Instrucción 12</span><h2>Detente ante la señal de PARE</h2></div>
+                </div>
+                <p class="regla">Ante una señal de PARE, detén completamente el vehículo y continúa cuando sea seguro.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor12">¿Qué exige una señal PARE?</label>
+                    <select id="conductor12" name="conductor12">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Reducir un poco y seguir</option>
+                        <option value="2">Tocar la bocina</option>
+                        <option value="3">Detenerse completamente y comprobar que sea seguro</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">13</span>
+                    <div><span class="tipo-nivel">Instrucción 13</span><h2>No bloquees los cruces</h2></div>
+                </div>
+                <p class="regla">No ingreses a una intersección si no hay espacio para salir de ella.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor13">Si hay congestión y no puedes despejar el cruce, ¿qué haces?</label>
+                    <select id="conductor13" name="conductor13">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Esperas antes de entrar</option>
+                        <option value="2">Entras y bloqueas el cruce</option>
+                        <option value="3">Usas la bocina para avanzar</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="2">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">14</span>
+                    <div><span class="tipo-nivel">Instrucción 14</span><h2>Cede el paso a vehículos de emergencia</h2></div>
+                </div>
+                <p class="regla">Facilita el paso a ambulancias, bomberos u otros vehículos de emergencia cuando usan sus señales.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor14">¿Qué haces al escuchar una sirena de emergencia?</label>
+                    <select id="conductor14" name="conductor14">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Acelerar para ir delante</option>
+                        <option value="2">Facilitar el paso de forma segura</option>
+                        <option value="3">Seguir bloqueando su trayectoria</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="3">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">15</span>
+                    <div><span class="tipo-nivel">Instrucción 15</span><h2>Aumenta la precaución con lluvia</h2></div>
+                </div>
+                <p class="regla">Reduce la velocidad y aumenta la distancia de seguridad cuando la calzada está mojada.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor15">¿Qué debes hacer cuando llueve?</label>
+                    <select id="conductor15" name="conductor15">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">Frenar bruscamente en cada curva</option>
+                        <option value="2">Mantener la misma distancia siempre</option>
+                        <option value="3">Reducir la velocidad y aumentar la distancia</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+
+            <article class="nivel nivel-conductor" data-correcta="1">
+                <div class="nivel-cabecera">
+                    <span class="numero-nivel">16</span>
+                    <div><span class="tipo-nivel">Instrucción 16</span><h2>Estaciona en lugares permitidos</h2></div>
+                </div>
+                <p class="regla">Estaciona donde esté permitido y evita bloquear aceras, rampas, cruces o accesos.</p>
+                <div class="respuesta-nivel">
+                    <label for="conductor16">¿Dónde debes estacionar?</label>
+                    <select id="conductor16" name="conductor16">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="1">En un lugar permitido sin bloquear el paso</option>
+                        <option value="2">Sobre un cruce peatonal</option>
+                        <option value="3">Delante de una rampa de acceso</option>
+                    </select>
+                    <button class="boton boton-revisar" type="button">Revisar respuesta</button>
+                    <p class="resultado" aria-live="polite"></p>
+                </div>
+            </article>
+        </section>
+
+        <div class="navegacion-inferior">
+            <a class="boton boton-secundario" href="index.html">← Volver al inicio</a>
+            <a class="boton boton-principal" href="peaton.html">Ver modo peatón →</a>
+        </div>
+        <p class="nota">El puntaje de este recorrido es independiente del otro modo y se guarda en este navegador.</p>
+    </main>
+    <footer class="pie-pagina">Aula Vial Bolivia · Modo conductor</footer>
+</body>
+</html>

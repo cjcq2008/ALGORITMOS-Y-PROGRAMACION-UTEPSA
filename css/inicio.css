@@ -1,0 +1,169 @@
+/* Estilos exclusivos de index.html */
+/* Inicio: ocupa la ventana sin cambiar los recorridos */
+.pagina-inicio {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-inicio .encabezado {
+    flex-shrink: 0;
+}
+
+.pagina-inicio .inicio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.pagina-inicio .presentacion {
+    padding: 22px 20px;
+}
+
+.pagina-inicio .presentacion h1 {
+    font-size: clamp(26px, 3.5vw, 38px);
+}
+
+.pagina-inicio .opciones-recorrido {
+    margin: 0;
+    gap: 20px;
+}
+
+.pagina-inicio .tarjeta-recorrido {
+    min-height: 220px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.pagina-inicio .tarjeta-peaton {
+    background: linear-gradient(145deg, #edfff7, #d8f9eb);
+}
+
+.pagina-inicio .tarjeta-conductor {
+    background: linear-gradient(145deg, #fff8df, #ffedbd);
+}
+
+.pagina-inicio .numero-recorrido {
+    color: var(--gris);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.pagina-inicio .tarjeta-recorrido p {
+    max-width: 330px;
+}
+
+.pagina-inicio .como-funciona {
+    padding: 16px 20px;
+}
+
+.pagina-inicio .como-funciona > h2 {
+    margin-bottom: 12px;
+}
+
+.pagina-inicio .pasos-inicio {
+    gap: 12px;
+}
+
+.pagina-inicio .pasos-inicio article {
+    padding: 10px;
+}
+
+.pagina-inicio .pasos-inicio h3 {
+    margin: 5px 0 2px;
+}
+
+.pagina-inicio .pie-pagina {
+    flex-shrink: 0;
+    padding: 12px;
+}
+
+@media (max-height: 760px) and (min-width: 701px) {
+    .pagina-inicio .inicio {
+        gap: 12px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .pagina-inicio .presentacion {
+        padding: 14px 18px;
+    }
+
+    .pagina-inicio .opciones-recorrido {
+        gap: 14px;
+    }
+
+    .pagina-inicio .tarjeta-recorrido {
+        min-height: 170px;
+        padding: 14px;
+    }
+
+    .pagina-inicio .icono-recorrido {
+        font-size: 34px;
+    }
+
+    .pagina-inicio .como-funciona {
+        padding: 10px 16px;
+    }
+
+    .pagina-inicio .pasos-inicio article {
+        padding: 7px;
+    }
+}
+
+@media (max-width: 700px) {
+    .pagina-inicio .inicio {
+        flex: 1 0 auto;
+        gap: 14px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .pagina-inicio .presentacion {
+        padding: 20px 14px;
+    }
+
+    .pagina-inicio .opciones-recorrido {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .pagina-inicio .tarjeta-recorrido {
+        min-height: 0;
+        padding: 16px;
+        gap: 5px;
+    }
+
+    .pagina-inicio .icono-recorrido {
+        font-size: 34px;
+    }
+
+    .pagina-inicio .tarjeta-recorrido p {
+        margin-bottom: 8px;
+    }
+
+    .pagina-inicio .como-funciona {
+        padding: 14px;
+    }
+
+    .pagina-inicio .pasos-inicio {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .pagina-inicio .pasos-inicio article {
+        padding: 8px 5px;
+    }
+
+    .pagina-inicio .pasos-inicio p {
+        font-size: 12px;
+    }
+}
